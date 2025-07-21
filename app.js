@@ -21,8 +21,8 @@ app.use(helmet());
 // CORS configuration
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://your-frontend-domain.com'] 
-    : ['http://localhost:5174', 'http://localhost:5173','https://rasa-yatra.vercel.app'],
+    ? ['https://rasa-yatra.vercel.app', 'https://rasayatra.vercel.app'] 
+    : ['http://localhost:5174', 'http://localhost:5173', 'http://localhost:3000'],
   credentials: true
 }));
 
@@ -78,7 +78,7 @@ app.use('*', (req, res) => {
 // Error handling middleware (should be last)
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
   console.log(`🚀 RasaYatra API server running on port ${PORT}`);
