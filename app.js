@@ -11,6 +11,7 @@ const recipeRoutes = require('./routes/recipes');
 const favoriteRoutes = require('./routes/favorites');
 const bookmarkRoutes = require('./routes/bookmarks');
 const regionRoutes = require('./routes/regions');
+// const communityRoutes = require('./routes/community');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -66,6 +67,7 @@ app.use('/api/recipes', recipeRoutes);
 app.use('/api/favorites', favoriteRoutes);
 app.use('/api/bookmarks', bookmarkRoutes);
 app.use('/api/regions', regionRoutes);
+// app.use('/api/community', communityRoutes);
 
 // Handle 404 routes
 app.use('*', (req, res) => {
